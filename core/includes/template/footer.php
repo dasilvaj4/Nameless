@@ -43,7 +43,11 @@ $footer_nav .= '
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#">&copy; ' . htmlspecialchars($sitename) . ' ' . date('Y') . '</a>
 		<ul class="dropdown-menu">
 			<li><a href="#" target="_blank">Site software &copy; Samerton</a></li>
+<<<<<<< HEAD
 			<li><a href="https://github.com/NamelessMC/Nameless" target="_blank">Source avaliable on GitHub.</a></li>
+=======
+			<li><a href="https://github.com/NamelessMC/Nameless" target="_blank">Source available on GitHub.</a></li>
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 		</ul>
 	</li>
 	';

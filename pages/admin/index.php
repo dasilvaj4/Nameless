@@ -23,11 +23,19 @@ if($user->isLoggedIn()){
 						'username' => array('required' => true, 'isbanned' => true, 'isactive' => true),
 						'password' => array('required' => true)
 					));
+<<<<<<< HEAD
 					
 					if($validation->passed()) {
 						$user = new User();
 						$login = $user->adminLogin(Input::get('username'), Input::get('password'));
 						
+=======
+
+					if($validation->passed()) {
+						$user = new User();
+						$login = $user->adminLogin(Input::get('username'), Input::get('password'));
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						if($login) {
 							Redirect::to("/admin");
 							die();
@@ -52,15 +60,26 @@ if($user->isLoggedIn()){
     <meta name="author" content="<?php echo $sitename; ?>">
 	<meta name="robots" content="noindex">
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<?php
 	// Generate header and navbar content
 	// Page title
 	$title = $admin_language['index'];
+<<<<<<< HEAD
 	
 	require('core/includes/template/generate.php');
 	?>
 	
+=======
+
+	require('core/includes/template/generate.php');
+	?>
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
   </head>
   <body>
 	<div class="container">
@@ -116,14 +135,26 @@ $version = htmlspecialchars($version[0]->value);
 $uid = $queries->getWhere('settings', array('name', '=', 'unique_id'));
 $uid = $uid[0]->value;
 
+<<<<<<< HEAD
 
 if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/stats.php?uid=' . $uid . '&version=' . $version)){
+=======
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_URL, 'https://worldscapemc.co.uk/nl_core/nl1/stats.php?uid=' . $uid . '&version=' . $version);
+if($update_check = curl_exec($ch)){
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	if($update_check == 'Failed'){
 		$update_check = 'error';
 	}
 } else {
 	$update_check = 'error';
 }
+<<<<<<< HEAD
+=======
+curl_close($ch);
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -135,15 +166,26 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
     <meta name="author" content="Samerton">
 	<meta name="robots" content="noindex">
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<?php
 	// Generate header and navbar content
 	// Page title
 	$title = $admin_language['index'];
+<<<<<<< HEAD
 	
 	require('core/includes/template/generate.php');
 	?>
 	
+=======
+
+	require('core/includes/template/generate.php');
+	?>
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<!-- Custom style -->
 	<style>
 	html {
@@ -176,7 +218,11 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 		line-height: 1.2em;
 	}
 	</style>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
   </head>
   <body>
 	<?php
@@ -203,9 +249,15 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 			<strong>Running PHP <?php echo phpversion(); ?></strong> <a href="/admin/phpinfo" target="_blank">(Full PHP information)</a><br />
 			<h3><?php echo $admin_language['statistics']; ?></h3>
 			<strong><?php echo $admin_language['registrations_per_day']; ?></strong>
+<<<<<<< HEAD
 			
 			<canvas id="registrationChart" width="100%" height="40"></canvas>
 			
+=======
+
+			<canvas id="registrationChart" width="100%" height="40"></canvas>
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 			<h3>Banner</h3>
 			<img src="/core/integration/banner/banner.png"><br />
 			URL: <code>http://<?php echo $_SERVER['SERVER_NAME']; ?>/core/integration/banner/banner.png</code>
@@ -217,21 +269,34 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 	// Footer
 	require('core/includes/template/footer.php');
 	$smarty->display('styles/templates/' . $template . '/footer.tpl');
+<<<<<<< HEAD
 	
 	// Scripts 
+=======
+
+	// Scripts
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	require('core/includes/template/scripts.php');
 	?>
 
 	<script src="<?php echo PATH; ?>core/assets/js/moment.js"></script>
 	<script src="<?php echo PATH; ?>core/assets/js/charts/Chart.min.js"></script>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<?php
 	// Get data for members statistics graph
 	$latest_members = $queries->orderWhere('users', 'joined > ' . strtotime("-1 week"), 'joined', 'ASC');
 
 	// Output array
 	$output = array();
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	foreach($latest_members as $member){
 		// Turn into format for graph
 		// First, order them per day
@@ -244,7 +309,11 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 			$output[$date] = 1;
 		}
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	// Fill in missing dates, set registrations to 0
 	$start = strtotime("-1 week");
 	$start = date('d M Y', $start);
@@ -256,10 +325,17 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 		}
 		$start = $start + 86400;
 	}
+<<<<<<< HEAD
 	
 	// Sort by date
 	ksort($output);
 	
+=======
+
+	// Sort by date
+	ksort($output);
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	// Turn into string for graph
 	$labels = '';
 	$registration_data = '';
@@ -270,7 +346,11 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 	$labels = '[' . rtrim($labels, ', ') . ']';
 	$registration_data = '[' . rtrim($registration_data, ', ') . ']';
 	?>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<script type="text/javascript">
 	$(document).ready(function() {
 		var ctx = $("#registrationChart").get(0).getContext("2d");
@@ -289,7 +369,11 @@ if($update_check = file_get_contents('https://worldscapemc.co.uk/nl_core/nl1/sta
 				}
 			]
 		}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 		var registrationLineChart = new Chart(ctx, {
 			type: 'line',
 			data: data

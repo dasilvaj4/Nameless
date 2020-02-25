@@ -71,7 +71,11 @@ if(Input::exists()){
 		
 	} else {
 		// Invalid token
+<<<<<<< HEAD
 		Session::flash('app_succes', '<div class="alert alert-danger">' . $admin_language['invalid_token'] . '</div>');
+=======
+		Session::flash('app_success', '<div class="alert alert-danger">' . $admin_language['invalid_token'] . '</div>');
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	}
 }
 

@@ -247,7 +247,11 @@ $admin_language = array(
 	'group_html' => 'Group HTML',
 	'group_html_lg' => 'Group HTML Large',
 	'donor_group_id' => 'Donor package ID',
+<<<<<<< HEAD
 	'donor_group_id_help' => '<p>This is the ID of the group\'s package from Buycraft, MinecraftMarket or MCStock.</p><p>This can be left empty.</p>',
+=======
+	'donor_group_id_help' => '<p>This is the ID of the group\'s package from your Tebex or CraftingStore</p><p>This can be left empty.</p>',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	'donor_group_instructions' => 	'<p>Donor groups must be created in the order of <strong>lowest value to highest value</strong>.</p>
 									<p>For example, a £10 package will be created before a £20 package.</p>',
 	'delete_group' => 'Delete Group',

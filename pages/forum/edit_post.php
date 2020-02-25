@@ -261,7 +261,11 @@ $token = Token::generate();
 	$purifier = new HTMLPurifier($config);
 	
 	// Get clean post content
+<<<<<<< HEAD
 	$clean = $purifier->purify(htmlspecialchars_decode($post_editing[0]->post_content));
+=======
+	$clean = nl2br($purifier->purify(htmlspecialchars_decode($post_editing[0]->post_content)));
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	?>
 	<script type="text/javascript">
 		CKEDITOR.replace( 'editor', {
@@ -277,7 +281,11 @@ $token = Token::generate();
 			// Remove the redundant buttons from toolbar groups defined above.
 			removeButtons: 'Anchor,Styles,Specialchar,Font,About,Flash,Iframe'
 		} );
+<<<<<<< HEAD
 		CKEDITOR.timestamp = '2';
+=======
+		CKEDITOR.timestamp = '3';
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 		CKEDITOR.config.disableNativeSpellChecker = false;
 		CKEDITOR.config.extraAllowedContent = 'blockquote small';
 		CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;

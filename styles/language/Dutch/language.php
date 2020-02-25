@@ -89,7 +89,11 @@ $admin_language = array(
     'outgoing_email_help' => 'Alleen nodig als de PHP mail functie is ingeschakeld',
     'use_php_mail' => 'Gebruik PHP mail() functie?',
     'use_php_mail_help' => 'Aanbevolen: ingeschakeld. Als je website geen mails stuurt, dan kun je de "core/email.php" uitschakelen in de email instellingen.',
+<<<<<<< HEAD
     'use_gmail' => 'Gebruik Gmail voor het verzenden van e-mail?',
+=======
+    'use_gmail' => 'Gebruik Gmail voor het verzenden van e-mails?',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
     'use_gmail_help' => 'Alleen beschikbaar als de PHP mail() functie is uitgeschakeld. Als je ervoor kiest om Gmail te gebruiken, zal SMTP worden gebruikt, dit zal de configuratie in core/email.php nodig hebben.',
     'enable_mail_verification' => 'Schakel e-mail account verificatie in?',
     'enable_email_verification_help' => 'Nadat deze geactiveerd is zullen nieuwe geregistreerde gebruikers gevraagd worden om hun account via de e-mail te verifiëren voordat de registratie voltooid wordt.',

@@ -132,3 +132,13 @@ a > img {
 	border: none;
 	outline: 1px solid #0782C1;
 }
+<<<<<<< HEAD
+=======
+
+code {
+	display: block;
+	padding: 0.5em;
+	background: #F0F0F0;
+	color: black;
+}
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b

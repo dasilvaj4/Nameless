@@ -838,7 +838,11 @@ $table_language = array(
  *  API language
  */
 $api_language = array(
+<<<<<<< HEAD
 	'register' => 'Enregistrement complèté.'
+=======
+	'register' => 'Enregistrement complété.'
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 );
  
 ?>

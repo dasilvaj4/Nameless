@@ -159,6 +159,7 @@ if($webstore == 'bc'){
         }
     }
 
+<<<<<<< HEAD
 } else if($webstore == 'mm'){
     // MinecraftMarket
     require('integration/minecraftmarket.php');
@@ -513,6 +514,8 @@ if($webstore == 'bc'){
         }
     }
 
+=======
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 } else if($webstore == 'cs'){
     // CraftingStore
     require('integration/craftingstore.php');
@@ -525,31 +528,61 @@ if($webstore == 'bc'){
 
     // Categories
     foreach($cs_categories['result'] as $item){
+<<<<<<< HEAD
 
         $category_name = htmlspecialchars($item['name']);
         $category = $queries->getWhere('donation_categories', array('name', '=', $category_name));
+=======
+        $category_name = htmlspecialchars($item['name']);
+        $category = $queries->getWhere('donation_categories', array('name', '=', $category_name));
+        $category_order = $item['order'];
+        $category_id = $item['id'];
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 
         // Does it already exist in the database?
         if(!count($category)){
             // Non existing, creating.
 
+<<<<<<< HEAD
             $category_order = $item['order'];
             $category_id = $item['id'];
+=======
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
             $queries->create('donation_categories', array(
                 'name' => $category_name,
                 'cid' => $category_id,
                 'order' => ($category_order ? $category_order : 0)
             ));
+<<<<<<< HEAD
         }
 
         $categories[] = $item['id'];
+=======
+        } else {
+			// Update
+			$cid = $category[0]->id;
+
+			$queries->update('donation_categories', $cid, array(
+				'name' => $category_name,
+				'`order`' => ($category_order ? $category_order : 0),
+				'cid' => $category_id
+			));
+		}
+
+        $categories[] = $category_name;
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
     }
 
     // Delete categories no longer on web store
     $category_query = $queries->getWhere('donation_categories', array('cid', '<>', 0));
     foreach($category_query as $item){
+<<<<<<< HEAD
         if(!in_array($item->cid, $categories)){
             $queries->delete('donation_categories', array('cid', '=', $item->cid));
+=======
+        if(!in_array($item->name, $categories)){
+            $queries->delete('donation_categories', array('name', '=', $item->name));
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
         }
     }
 
@@ -612,7 +645,10 @@ if($webstore == 'bc'){
     /*
      *  Latest donors
      */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
     if(count($cs_donors['result'])){
         // Get latest payment already stored in cache
         $latest_payment = $queries->orderWhere('donation_cache', 'id <> 0', 'time', 'DESC');
@@ -620,6 +656,7 @@ if($webstore == 'bc'){
         else $latest_payment = 0;
 
         foreach($cs_donors['result'] as $item){
+<<<<<<< HEAD
             if($latest_payment < $item['timestamp']){
                 // Input into database
                 $queries->create('donation_cache', array(
@@ -628,6 +665,16 @@ if($webstore == 'bc'){
                     'ign' => htmlspecialchars($item['player_name']),
                     'price' => $item['price'],
                     'package' => $item['package']
+=======
+            if($latest_payment < $item['createdAt']){
+                // Input into database
+                $queries->create('donation_cache', array(
+                    'time' => $item['createdAt'],
+                    'uuid' => $item['minecraftUUID'],
+                    'ign' => htmlspecialchars($item['minecraftName']),
+                    'price' => $item['price'],
+                    'package' => (isset($item['packages'][0]) ? $item['packages'][0]['packageId'] : 0) // TODO: support multiple packages
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
                 ));
             }
         }
@@ -636,4 +683,8 @@ if($webstore == 'bc'){
 
 return true;
 
+<<<<<<< HEAD
 die('Valid');
+=======
+die('Valid');
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b

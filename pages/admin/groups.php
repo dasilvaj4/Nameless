@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php 
+=======
+<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 /*
  *	Made by Samerton
  *  http://worldscapemc.co.uk
@@ -23,7 +27,11 @@ if($user->isLoggedIn()){
 	Redirect::to('/');
 	die();
 }
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 // Set page name for sidebar
 $adm_page = "users";
 ?>
@@ -37,15 +45,26 @@ $adm_page = "users";
     <meta name="author" content="<?php echo $sitename; ?>">
 	<meta name="robots" content="noindex">
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<?php
 	// Generate header and navbar content
 	// Page title
 	$title = $admin_language['groups'];
+<<<<<<< HEAD
 	
 	require('core/includes/template/generate.php');
 	?>
 	
+=======
+
+	require('core/includes/template/generate.php');
+	?>
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<!-- Custom style -->
 	<style>
 	html {
@@ -55,14 +74,24 @@ $adm_page = "users";
 
   </head>
 
+<<<<<<< HEAD
   <body>	
+=======
+  <body>
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<?php
 	// "Groups" page
 	// Load navbar
 	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
+<<<<<<< HEAD
 	
 	echo '<br />';
 	
+=======
+
+	echo '<br />';
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	if(Session::exists('adm-alert')){
 		echo Session::flash('adm-alert');
 	}
@@ -77,21 +106,37 @@ $adm_page = "users";
 			<li><a href="/admin/users"><?php echo $admin_language['users']; ?></a></li>
 			<li class="active"><a href="/admin/groups"><?php echo $admin_language['groups']; ?></a></li>
 		  </ul>
+<<<<<<< HEAD
 		  
 		  <hr>
 		  
 		  <div class="well well-sm">
 			<?php 
+=======
+
+		  <hr>
+
+		  <div class="well well-sm">
+			<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 				if(Session::exists('adm-groups')){
 					echo Session::flash('adm-groups');
 				}
 			?>
+<<<<<<< HEAD
 			<?php 
+=======
+			<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 			if(!isset($_GET["action"]) && !isset($_GET["group"])){
 			?>
 			<a href="/admin/groups/?action=new" class="btn btn-default"><?php echo $admin_language['new_group']; ?></a>
 			<br /><br />
+<<<<<<< HEAD
 			<?php 
+=======
+			<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 			$groups = $queries->getAll("groups", array("id", "<>", 0));
 			?>
 			<table class="table table-bordered">
@@ -103,7 +148,11 @@ $adm_page = "users";
 					</tr>
 				</thead>
 				<tbody>
+<<<<<<< HEAD
 			<?php 
+=======
+			<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 			foreach($groups as $group){
 			?>
 					<tr>
@@ -111,13 +160,21 @@ $adm_page = "users";
 						<td><a href="/admin/groups/?group=<?php echo $group->id; ?>"><?php echo $group->name; ?></a></td>
 						<td><?php echo count($queries->getWhere("users", array("group_id", "=", $group->id))); ?></td>
 					</tr>
+<<<<<<< HEAD
 			<?php 
+=======
+			<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 			}
 			?>
 				</tbody>
 			</table>
 		  </div>
+<<<<<<< HEAD
 			<?php 
+=======
+			<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 			} else if(isset($_GET["action"])){
 				if($_GET["action"] === "new"){
 					if(Input::exists()) {
@@ -130,7 +187,11 @@ $adm_page = "users";
 									'max' => 20
 								)
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							if($validation->passed()){
 								try {
 									$queries->create("groups", array(
@@ -142,17 +203,30 @@ $adm_page = "users";
 
 									echo '<script data-cfasync="false">window.location.replace("/admin/groups");</script>';
 									die();
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								} catch(Exception $e){
 									die($e->getMessage());
 								}
 							}
+<<<<<<< HEAD
 						}						
 					}
 					
 					// Generate token for form
 					$token = Token::generate();
 					
+=======
+						}
+					}
+
+					// Generate token for form
+					$token = Token::generate();
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 					if(isset($validation)){
 						if(!$validation->passed()){
 					?>
@@ -169,7 +243,11 @@ $adm_page = "users";
 						}
 						?>
 					</div>
+<<<<<<< HEAD
 					<?php 
+=======
+					<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						}
 					}
 					?>
@@ -183,7 +261,11 @@ $adm_page = "users";
 						</div>
 						<br />
 						<input type="hidden" name="token" value="<?php echo $token; ?>">
+<<<<<<< HEAD
 						<input class="btn btn-success" type="submit" value="<?php echo $general_language['submit']; ?>">	
+=======
+						<input class="btn btn-success" type="submit" value="<?php echo $general_language['submit']; ?>">
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 					</form>
 					<br />
 					<div class="alert alert-info">
@@ -205,7 +287,11 @@ $adm_page = "users";
 						</div>
 					  </div>
 					</div>
+<<<<<<< HEAD
 					<?php 
+=======
+					<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 				}
 			} else if(isset($_GET["group"])){
 				if(Input::exists()) {
@@ -225,7 +311,11 @@ $adm_page = "users";
 									'max' => 1024
 								)
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							if($validation->passed()){
 								try {
 									$queries->update('groups', $_GET["group"], array(
@@ -237,13 +327,22 @@ $adm_page = "users";
 										'admin_cp' => Input::get('admincp'),
 										'staff' => Input::get('staff')
 									));
+<<<<<<< HEAD
 									
 									echo '<script data-cfasync="false">window.location.replace("/admin/groups/?group=' . $_GET['group'] . '");</script>';
+=======
+
+									echo '<script data-cfasync="false">window.location.replace("/admin/groups/?group=' . htmlspecialchars($_GET['group'], ENT_QUOTES) . '");</script>';
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 									die();
 								} catch(Exception $e) {
 									die($e->getMessage());
 								}
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							} else {
 								echo '<div class="alert alert-danger">';
 								foreach($validation->errors() as $error) {
@@ -271,6 +370,7 @@ $adm_page = "users";
 								die();
 							} catch(Exception $e) {
 								die($e->getMessage());
+<<<<<<< HEAD
 							}				
 						}
 					}
@@ -279,6 +379,16 @@ $adm_page = "users";
 				// Generate token for form
 				$token = Token::generate();
 				
+=======
+							}
+						}
+					}
+				}
+
+				// Generate token for form
+				$token = Token::generate();
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 				if(!is_numeric($_GET["group"])){
 					$group = $queries->getWhere("groups", array("name", "=", $_GET["group"]));
 				} else {
@@ -315,21 +425,33 @@ $adm_page = "users";
 						<input type="hidden" name="admincp" value="0">
 						<input type="checkbox" name="admincp" id="InputAdminCP" placeholder="<?php echo $admin_language['group_admincp']; ?>" value="1" <?php if($group[0]->admin_cp == 1){ ?> checked<?php } ?>>
 					  </div>
+<<<<<<< HEAD
 					  <?php 
+=======
+					  <?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 					  if($group[0]->staff == 1){} else {
 					  ?>
 					  <div class="form-group">
 						<label for="InputBuycraft"><?php echo $admin_language['donor_group_id']; ?></label>
 						<input type="text" name="buycraft_id" class="form-control" id="InputBuycraft" placeholder="<?php echo $admin_language['donor_group_id']; ?>" value="<?php echo htmlspecialchars($group[0]->buycraft_id); ?>">
 					  </div>
+<<<<<<< HEAD
 					  <?php 
+=======
+					  <?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 					  }
 					  ?>
 					  <input type="hidden" name="token" value="<?php echo $token; ?>">
 					  <input type="hidden" name="action" value="update">
 					  <input type="submit" value="<?php echo $general_language['submit']; ?>" class="btn btn-default">
 					</form>
+<<<<<<< HEAD
 					<?php 
+=======
+					<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 					if($group[0]->id == 2 || $group[0]->id == 3 || $group[0]->id == 1){} else {
 					?>
 					<br />
@@ -339,7 +461,11 @@ $adm_page = "users";
 					  <input type="hidden" name="id" value="<?php echo $group[0]->id; ?>">
 					  <input onclick="return confirm('<?php echo str_replace('{x}', htmlspecialchars($group[0]->name), $admin_language['confirm_group_deletion']); ?>');" type="submit" value="<?php echo $admin_language['delete_group']; ?>" class="btn btn-danger">
 					</form>
+<<<<<<< HEAD
 					<?php 
+=======
+					<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 					}
 				} else {
 					Session::flash('adm-groups', '<div class="alert alert-info">' . $admin_language['group_not_exist'] . '</div>');
@@ -349,14 +475,23 @@ $adm_page = "users";
 			}
 			?>
 		</div>
+<<<<<<< HEAD
       </div>	  
+=======
+      </div>
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
     </div>
 	<?php
 	// Footer
 	require('core/includes/template/footer.php');
 	$smarty->display('styles/templates/' . $template . '/footer.tpl');
+<<<<<<< HEAD
 	
 	// Scripts 
+=======
+
+	// Scripts
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	require('core/includes/template/scripts.php');
 	?>
   </body>

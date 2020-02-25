@@ -11,7 +11,11 @@
 
 #### Example:
 **What kind of issue is it (Question, Bug, etc.)?** Bug.  
+<<<<<<< HEAD
 **In which version of NamelessMC did it occur (1.x.x)?** Release 1.0.19.  
+=======
+**In which version of NamelessMC did it occur (1.x.x)?** Release 1.0.21.  
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 **How would you describe the issue?** The index does not load up at all.  
 **Do you have (relevant) resources about this issue (Logs, pictures, etc.)?** Yes, I have the a screenshot of it. [Click here](http://i.imgur.com/QqkXhVx.png)  
 **Do you have an idea how or where the issue occurs?** I think it has to do with the "index.php" file but not sure.

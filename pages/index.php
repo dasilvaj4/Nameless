@@ -167,7 +167,17 @@ else
 	foreach($latest_news as $item){
 		// Get poster's avatar
 		$avatar = '<img class="img-rounded" style="width:25px; height:25px;" src="' . $user->getAvatar($item["author"], "../", 25) . '" />';
+<<<<<<< HEAD
 		
+=======
+
+		if($item['label']){
+		  $label = $queries->getWhere('forums_topic_labels', array('id', '=', $item['label']));
+		  $label = '<span class="label label-' . htmlspecialchars($label[0]->label) . '">' . htmlspecialchars($label[0]->name) . '</span>';
+    } else
+      $label = '';
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 		$news[] = array(
 			'id' => $item['topic_id'],
 			'date' => date('d M Y, H:i', $item['topic_date']),
@@ -178,7 +188,12 @@ else
 			'author_username' => htmlspecialchars($user->idToName($item['author'])),
 			'author_avatar' => $avatar,
 			'content' => $purifier->purify(htmlspecialchars_decode($item['content'])),
+<<<<<<< HEAD
 			'group' => $user->getGroup($item['author'], true)
+=======
+			'group' => $user->getGroup($item['author'], true),
+			'label' => $label
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 		);
 	}
 

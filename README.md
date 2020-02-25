@@ -4,11 +4,19 @@
 
 Nameless version 2.0.0 is currently in development and the source can be viewed on the v2 branch. Until it's ready for production use, any pre-releases can be found here: https://github.com/NamelessMC/Nameless/releases.
 
+<<<<<<< HEAD
 ## Version 1.0.19
 
 NamelessMC is a free, easy to use & powerful website software for your Minecraft server, which includes a large range of features.
 
 Version 1.0.19 features:
+=======
+## Version 1.0.21
+
+NamelessMC is a free, easy to use & powerful website software for your Minecraft server, which includes a large range of features.
+
+Version 1.0.21 features:
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 
 - Template and theme system
 - Languages
@@ -122,7 +130,11 @@ Core modules:
 **NamelessMC Translations**
 * Chinese: @BirkhoffLee
 * Czech: @SnooWiK, @Root3287, @godleydemon, @yshf9
+<<<<<<< HEAD
 * Dutch: Sander Jochems, @Azoraqua, @Headhunterzpw, @melerpe, @aycgit, @yshf9, @GodleyDemon, @Tim-NL, @Derkades, smessie, @DoraKlikOpDora, @TheSander562
+=======
+* Dutch: @Sander0542, @Azoraqua, @Headhunterzpw, @melerpe, @aycgit, @yshf9, @GodleyDemon, @Tim-NL, @Derkades, smessie, @DoraKlikOpDora, @TheSander562
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 * EnglishUK: @Samerton, @Awtra
 * Finnish: -kakara-, @Root3287, @godleydemon, @yshf9
 * French: @Pandalyser, CreaModZ, Aviortheking, @Noiknez, @yshf9, @Root3287
@@ -131,12 +143,20 @@ Core modules:
 * Norsk: @partydragen, @Root3287, @godleydemon, @OscarWoHA, @tlystad24
 * Portugues: @dgateles, @dasilvaj4, @Root3287, @godleydemon
 * Slovak: Marki35, @Root3287, @godleydemon, MrMiijoSK
+<<<<<<< HEAD
 * Spanish: @paloke, @mrlost, @Legomix13, Dexkum, @SrBas97, @Root3287, @Ariuw, @godleydemon
+=======
+* Spanish: @paloke, @mrlost, @Legomix13, Dexkum, @SrBas97, @Root3287, @Ariuw, @godleydemon, @iJosGCS
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 
 ## Discord
 [<img src="https://discordapp.com/api/guilds/246705793066467328/widget.png?style=shield">](https://discord.gg/HYVMgN2)
 
+<<<<<<< HEAD
 The official [NamelessMC Discord bot](https://github.com/NamelessMC/NamelessBot) was made by [**BrightSkyz**](https:/github.com/BrightSkyz).
+=======
+The official [NamelessMC Discord bot](https://github.com/NamelessMC/NamelessBot) was made by [**BrightSkyz**](https://github.com/BrightSkyz).
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 
 <!--## IRC
 \#NamelessMC on [irc.spi.gt](http://irc.spi.gt/iris/?channels=namelessmc)-->

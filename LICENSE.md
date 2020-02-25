@@ -1,6 +1,10 @@
 The MIT License (MIT)
 
+<<<<<<< HEAD
 Copyright (c) 2014-2018 Samerton
+=======
+Copyright (c) 2014-2020 Samerton
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -12,7 +12,18 @@
 // Initialise the ban appeal addon
 // We've already checked to see if it's enabled
 
+<<<<<<< HEAD
 require('addons/BanAppeal/language.php');
+=======
+// Check language
+$c->setCache('languagecache');
+$language = $c->retrieve('language');
+
+if(file_exists('addons/BanAppeal/' . $language . '.php'))
+	require('addons/BanAppeal/' . $language . '.php');
+else
+	require('addons/BanAppeal/language.php');
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 
 if($user->isLoggedIn()){
 	// Check cache for link location

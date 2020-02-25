@@ -381,7 +381,12 @@ class Forum {
 					"topic_views" => $item->topic_views,
 					"author" => $item->topic_creator,
 					"content" => $post,
+<<<<<<< HEAD
 					"replies" => $posts
+=======
+					"replies" => $posts,
+					"label" => $item->label
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 				);
 			}
 		}

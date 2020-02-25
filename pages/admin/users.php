@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php 
+=======
+<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 /*
  *	Made by Samerton
  *  http://worldscapemc.co.uk
@@ -23,7 +27,11 @@ if($user->isLoggedIn()){
 	Redirect::to('/');
 	die();
 }
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 // Set page name for sidebar
 $adm_page = "users";
 
@@ -50,22 +58,37 @@ require('core/integration/uuid.php');
     <meta name="author" content="<?php echo $sitename; ?>">
 	<meta name="robots" content="noindex">
 	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<?php
 	// Generate header and navbar content
 	// Page title
 	$title = $admin_language['users'];
+<<<<<<< HEAD
 	
 	require('core/includes/template/generate.php');
 	?>
 	
+=======
+
+	require('core/includes/template/generate.php');
+	?>
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<!-- Custom style -->
 	<style>
 	html {
 		overflow-y: scroll;
 	}
 	</style>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
   </head>
 
   <body>
@@ -73,7 +96,11 @@ require('core/integration/uuid.php');
 	// "Users" page
 	// Load navbar
 	$smarty->display('styles/templates/' . $template . '/navbar.tpl');
+<<<<<<< HEAD
 	  
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	echo '<br />';
 
 	if(Session::exists('adm-alert')){
@@ -90,9 +117,15 @@ require('core/integration/uuid.php');
 			<li class="active"><a href="/admin/users"><?php echo $admin_language['users']; ?></a></li>
 			<li><a href="/admin/groups"><?php echo $admin_language['groups']; ?></a></li>
 		  </ul>
+<<<<<<< HEAD
 		  
 		  <hr>
 		  
+=======
+
+		  <hr>
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 		  <div class="well well-sm">
 			<?php
 			if(Session::exists('adm-users')){
@@ -104,7 +137,11 @@ require('core/integration/uuid.php');
 						echo '<script data-cfasync="false">window.location.replace("/admin/users/");</script>';
 						die();
 					} else {
+<<<<<<< HEAD
 						if($_GET['p'] == 1){ 
+=======
+						if($_GET['p'] == 1){
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							// Avoid bug in pagination class
 							echo '<script data-cfasync="false">window.location.replace("/admin/users/");</script>';
 							die();
@@ -114,7 +151,11 @@ require('core/integration/uuid.php');
 				} else {
 					$p = 1;
 				}
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 				$users = $queries->orderAll("users", "USERNAME", "ASC");
 				$groups = $queries->getAll("groups", array("id", "<>", 0));
 			?>
@@ -153,13 +194,21 @@ require('core/integration/uuid.php');
 				?>
 			  </tbody>
 			</table>
+<<<<<<< HEAD
 			<?php 
+=======
+			<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 			} else if(isset($_GET["action"]) && $_GET['action'] !== 'validate'){
 				if($_GET["action"] === "new"){
 					if(Input::exists()) {
 						if(Token::check(Input::get('token'))) {
 							$validate = new Validate();
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							$to_validation = array(
 								'password' => array(
 									'required' => true,
@@ -179,7 +228,11 @@ require('core/integration/uuid.php');
 									'required' => true
 								)
 							);
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							if($uuid_linking == '1'){
 								if($displaynames == "true"){
 									$to_validation['mcname'] = array(
@@ -203,7 +256,11 @@ require('core/integration/uuid.php');
 									);
 									$mcname = htmlspecialchars(Input::get('username'));
 								}
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								// Get UUID
 								$profile = ProfileUtils::getProfile($mcname);
 
@@ -212,9 +269,15 @@ require('core/integration/uuid.php');
 									if(isset($result['uuid']) && !empty($result['uuid'])){
 										$uuid = $result['uuid'];
 									} else $uuid = 'Unknown';
+<<<<<<< HEAD
 									
 								} else $uuid = 'Unknown';
 								
+=======
+
+								} else $uuid = 'Unknown';
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							} else {
 								if($displaynames == "true"){
 									$to_validation['mcname'] = array(
@@ -239,6 +302,7 @@ require('core/integration/uuid.php');
 									$mcname = htmlspecialchars(Input::get('username'));
 								}
 							}
+<<<<<<< HEAD
 							
 							$validation = $validate->check($_POST, $to_validation);
 							
@@ -251,6 +315,20 @@ require('core/integration/uuid.php');
 								$date = new DateTime();
 								$date = $date->getTimestamp();
 								
+=======
+
+							$validation = $validate->check($_POST, $to_validation);
+
+							if($validation->passed()){
+								$user = new User();
+
+								$password = password_hash(Input::get('password'), PASSWORD_BCRYPT, array("cost" => 13));
+
+								// Get current unix time
+								$date = new DateTime();
+								$date = $date->getTimestamp();
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								try {
 									$user->create(array(
 										'username' => htmlspecialchars(Input::get('username')),
@@ -297,7 +375,11 @@ require('core/integration/uuid.php');
 										echo $admin_language['select_user_group'] . '<br />';
 									break;
 								}
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							} else if(strpos($error, 'minimum') !== false){
 								// x must be a minimum of y characters long
 								switch($error){
@@ -311,7 +393,11 @@ require('core/integration/uuid.php');
 										echo $user_language['password_minimum_6'] . '<br />';
 									break;
 								}
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							} else if(strpos($error, 'maximum') !== false){
 								// x must be a maximum of y characters long
 								switch($error){
@@ -325,27 +411,47 @@ require('core/integration/uuid.php');
 										echo $user_language['password_maximum_30'] . '<br />';
 									break;
 								}
+<<<<<<< HEAD
 								
 							} else if(strpos($error, 'must match') !== false){
 								// password must match password again
 								echo $user_language['passwords_dont_match'] . '<br />';
 								
+=======
+
+							} else if(strpos($error, 'must match') !== false){
+								// password must match password again
+								echo $user_language['passwords_dont_match'] . '<br />';
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							} else if(strpos($error, 'already exists') !== false){
 								// already exists
 								echo $user_language['username_mcname_email_exists'] . '<br />';
 							} else if(strpos($error, 'not a valid Minecraft account') !== false){
 								// Invalid Minecraft username
 								echo $user_language['invalid_mcname'] . '<br />';
+<<<<<<< HEAD
 								
 							} else if(strpos($error, 'Mojang communication error') !== false){
 								// Mojang server error
 								echo $user_language['mcname_lookup_error'] . '<br />';
 								
+=======
+
+							} else if(strpos($error, 'Mojang communication error') !== false){
+								// Mojang server error
+								echo $user_language['mcname_lookup_error'] . '<br />';
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							}
 						}
 						?>
 					</div>
+<<<<<<< HEAD
 					<?php 
+=======
+					<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						}
 					}
 					?>
@@ -369,12 +475,20 @@ require('core/integration/uuid.php');
 						<div class="form-group">
 							<input class="form-control" type="password" name="password" id="password" placeholder="<?php echo $user_language['password']; ?>">
 						</div>
+<<<<<<< HEAD
 						<input class="form-control" type="password" name="password_again" id="password_again" placeholder="<?php echo $user_language['confirm_password']; ?>">	
+=======
+						<input class="form-control" type="password" name="password_again" id="password_again" placeholder="<?php echo $user_language['confirm_password']; ?>">
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						<input type="hidden" name="token" value="<?php echo Token::generate(); ?>"><br />
 						<strong><?php echo $admin_language['group']; ?></strong>
 						<select name="group" id="group" size="5" class="form-control">
 						  <?php
+<<<<<<< HEAD
 							$groups = $queries->orderAll('groups', 'name', 'ASC'); 
+=======
+							$groups = $queries->orderAll('groups', 'name', 'ASC');
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							$n = 0;
 							while ($n < count($groups)){
 								$result = (array)$groups[$n];
@@ -384,9 +498,15 @@ require('core/integration/uuid.php');
 						  ?>
 						</select>
 						<br />
+<<<<<<< HEAD
 						<input class="btn btn-success" type="submit" value="<?php echo $general_language['submit']; ?>">	
 					</form>
 					<?php 
+=======
+						<input class="btn btn-success" type="submit" value="<?php echo $general_language['submit']; ?>">
+					</form>
+					<?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 				// Delete a user
 				} else if($_GET["action"] == 'delete'){
 					// Check for a valid UID
@@ -401,11 +521,16 @@ require('core/integration/uuid.php');
 							echo '<script data-cfasync="false">window.location.replace("/admin/users/");</script>';
 							die();
 						}
+<<<<<<< HEAD
 						
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						// Valid, has the admin confirmed deletion?
 						if(isset($_GET["confirm"])){
 							// Delete the user
 							$queries->delete('users', array('id', '=', $_GET["uid"]));
+<<<<<<< HEAD
 							
 							// Delete the user's posts
 							$queries->delete('posts', array('post_creator', '=', $_GET["uid"]));
@@ -417,6 +542,19 @@ require('core/integration/uuid.php');
 							$queries->delete('friends', array('user_id', '=', $_GET["uid"]));
 							$queries->delete('friends', array('friend_id', '=', $_GET["uid"]));
 							
+=======
+
+							// Delete the user's posts
+							$queries->delete('posts', array('post_creator', '=', $_GET["uid"]));
+
+							// Delete the user's topics
+							$queries->delete('topics', array('topic_creator', '=', $_GET["uid"]));
+
+							// Delete user's friends
+							$queries->delete('friends', array('user_id', '=', $_GET["uid"]));
+							$queries->delete('friends', array('friend_id', '=', $_GET["uid"]));
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							Session::flash('adm-users', '<div class="alert alert-info alert-dismissible">  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>' . $admin_language['user_deleted'] . '</div>');
 							echo '<script data-cfasync="false">window.location.replace("/admin/users/");</script>';
 							die();
@@ -458,12 +596,24 @@ require('core/integration/uuid.php');
 					if(Input::exists()) {
 						if(Token::check(Input::get('token'))) {
 							if(Input::get('action') === "update"){
+<<<<<<< HEAD
 								
 								$signature = Input::get('signature');
 								$_POST['signature'] = strip_tags(Input::get('signature'));
 								
 								$validate = new Validate();
 								
+=======
+
+								$signature = Input::get('signature');
+								$_POST['signature'] = strip_tags(Input::get('signature'));
+
+								if(isset($_POST['UUID']))
+								  $_POST['UUID'] = str_replace('-', '', $_POST['UUID']);
+
+								$validate = new Validate();
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								$to_validation = array(
 									'email' => array(
 										'required' => true,
@@ -486,7 +636,11 @@ require('core/integration/uuid.php');
 										'max' => 256
 									)
 								);
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								if($uuid_linking == '1'){
 									if($displaynames == "true"){
 										$to_validation['MCUsername'] = array(
@@ -530,9 +684,15 @@ require('core/integration/uuid.php');
 										$mcname = htmlspecialchars(Input::get('username'));
 									}
 								}
+<<<<<<< HEAD
 								
 								$validation = $validate->check($_POST, $to_validation);
 								
+=======
+
+								$validation = $validate->check($_POST, $to_validation);
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								if($validation->passed()){
 								  if(isset($_POST['group2']) && $_POST['group2'] > 0)
 								    $group2 = $_POST['group2'];
@@ -556,7 +716,11 @@ require('core/integration/uuid.php');
 									} catch(Exception $e) {
 										die($e->getMessage());
 									}
+<<<<<<< HEAD
 									
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								} else {
 									echo '<div class="alert alert-danger">';
 									foreach($validation->errors() as $error) {
@@ -579,7 +743,11 @@ require('core/integration/uuid.php');
 													echo $admin_language['select_user_group'] . '<br />';
 												break;
 											}
+<<<<<<< HEAD
 											
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 										} else if(strpos($error, 'minimum') !== false){
 											// x must be a minimum of y characters long
 											switch($error){
@@ -593,7 +761,11 @@ require('core/integration/uuid.php');
 													echo $user_language['password_minimum_6'] . '<br />';
 												break;
 											}
+<<<<<<< HEAD
 											
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 										} else if(strpos($error, 'maximum') !== false){
 											// x must be a maximum of y characters long
 											switch($error){
@@ -607,6 +779,7 @@ require('core/integration/uuid.php');
 													echo $user_language['password_maximum_30'] . '<br />';
 												break;
 												case (strpos($error, 'UUID') !== false):
+<<<<<<< HEAD
 													echo $user_language['uuid_max_32'] . '<br />';
 												break;
 											}
@@ -615,17 +788,35 @@ require('core/integration/uuid.php');
 											// password must match password again
 											echo $user_language['passwords_dont_match'] . '<br />';
 											
+=======
+													echo $admin_language['uuid_max_32'] . '<br />';
+												break;
+											}
+
+										} else if(strpos($error, 'must match') !== false){
+											// password must match password again
+											echo $user_language['passwords_dont_match'] . '<br />';
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 										} else if(strpos($error, 'already exists') !== false){
 											// already exists
 											echo $user_language['username_mcname_email_exists'] . '<br />';
 										} else if(strpos($error, 'not a valid Minecraft account') !== false){
 											// Invalid Minecraft username
 											echo $user_language['invalid_mcname'] . '<br />';
+<<<<<<< HEAD
 											
 										} else if(strpos($error, 'Mojang communication error') !== false){
 											// Mojang server error
 											echo $user_language['mcname_lookup_error'] . '<br />';
 											
+=======
+
+										} else if(strpos($error, 'Mojang communication error') !== false){
+											// Mojang server error
+											echo $user_language['mcname_lookup_error'] . '<br />';
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 										}
 									}
 									echo '</div>';
@@ -633,7 +824,11 @@ require('core/integration/uuid.php');
 							} else if(Input::get('action') == "delete"){
 								try {
 									$queries->delete('users', array('id', '=' , $data[0]->id));
+<<<<<<< HEAD
 									
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								} catch(Exception $e) {
 									die($e->getMessage());
 								}
@@ -647,7 +842,11 @@ require('core/integration/uuid.php');
 								} catch(Exception $e) {
 									die($e->getMessage());
 								}
+<<<<<<< HEAD
 							} else if(Input::get('action') == "avatar_enable"){ 
+=======
+							} else if(Input::get('action') == "avatar_enable"){
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 								try {
 									$queries->update('users', $_GET["user"], array(
 										"has_avatar" => "1"
@@ -665,7 +864,11 @@ require('core/integration/uuid.php');
 					}
 					if(count($individual)){
 						$token = Token::generate();
+<<<<<<< HEAD
 						
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						// Initialise HTML Purifier
 						$config = HTMLPurifier_Config::createDefault();
 						$config->set('HTML.Doctype', 'XHTML 1.0 Transitional');
@@ -676,9 +879,15 @@ require('core/integration/uuid.php');
 						$config->set('HTML.AllowedAttributes', 'target, href, src, height, width, alt, class, *.style');
 						$config->set('Attr.AllowedFrameTargets', array('_blank', '_self', '_parent', '_top'));
 						$purifier = new HTMLPurifier($config);
+<<<<<<< HEAD
 						
 						$signature = $purifier->purify(htmlspecialchars_decode($individual[0]->signature));
 						
+=======
+
+						$signature = $purifier->purify(htmlspecialchars_decode($individual[0]->signature));
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						echo '<h2 style="display: inline;">' . htmlspecialchars($individual[0]->username) . '</h2>';
 						?>
 						<span class="pull-right">
@@ -751,12 +960,17 @@ require('core/integration/uuid.php');
 							<label for="InputIP"><?php echo $admin_language['ip_address']; ?></label>
 							<input class="form-control" name="ip" id="InputIP" type="text" placeholder="<?php echo htmlspecialchars($individual[0]->lastip); ?>" readonly>
 						  </div>
+<<<<<<< HEAD
 						  <?php 
+=======
+						  <?php
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						  $groups = $queries->orderAll('groups', 'name', 'ASC');
 						  ?>
 						  <div class="form-group">
 							 <label for="InputGroup"><?php echo $admin_language['group']; ?></label>
 							 <select class="form-control" id="InputGroup" name="group"<?php if($_GET['user'] == 1){ ?> disabled<?php } ?>>
+<<<<<<< HEAD
 							<?php 
 							foreach($groups as $group){ 
 							?>
@@ -765,6 +979,16 @@ require('core/integration/uuid.php');
 							} 
 							?>
 							</select> 
+=======
+							<?php
+							foreach($groups as $group){
+							?>
+							  <option value="<?php echo $group->id; ?>" <?php if($group->id === $individual[0]->group_id){ echo 'selected="selected"'; } ?>><?php echo $group->name; ?></option>
+							<?php
+							}
+							?>
+							</select>
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 						  </div>
 						  <?php if($_GET['user'] == 1){ ?>
 						  <input type="hidden" name="group" value="2">
@@ -809,10 +1033,17 @@ require('core/integration/uuid.php');
 							  <input type="hidden" name="action" value="avatar_disable">
 							  <input type="submit" value="<?php echo $admin_language['disable_avatar']; ?>" class="btn btn-danger">
 							</form>
+<<<<<<< HEAD
 							<?php 
 							
 							// Doesn't have an avatar enabled, but does one exist? If so, let the admin choose to enable it
 							} else if (count(glob(__DIR__ . '/../../avatars/' . $_GET["user"] . '.*'))) { 
+=======
+							<?php
+
+							// Doesn't have an avatar enabled, but does one exist? If so, let the admin choose to enable it
+							} else if (count(glob(__DIR__ . '/../../avatars/' . $_GET["user"] . '.*'))) {
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 							?>
 							<strong><?php echo $admin_language['other_actions']; ?></strong><br />
 							<form role="form" action="" method="post">
@@ -829,21 +1060,36 @@ require('core/integration/uuid.php');
 			?>
 		  </div>
 		</div>
+<<<<<<< HEAD
       </div>	  
     </div>
 	
+=======
+      </div>
+    </div>
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<?php
 	// Footer
 	require('core/includes/template/footer.php');
 	$smarty->display('styles/templates/' . $template . '/footer.tpl');
+<<<<<<< HEAD
 	
 	// Scripts 
+=======
+
+	// Scripts
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	require('core/includes/template/scripts.php');
 	?>
 
 	<script src="/core/assets/js/tables/jquery.dataTables.min.js"></script>
 	<script src="/core/assets/js/tables/dataTables.bootstrap.js"></script>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<script type="text/javascript">
         $(document).ready(function() {
             $('.dataTables-users').dataTable({
@@ -859,7 +1105,11 @@ require('core/integration/uuid.php');
             });
 		});
 	</script>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	<script src="/core/assets/js/ckeditor.js"></script>
 	<script type="text/javascript">
 		CKEDITOR.replace( 'signature', {

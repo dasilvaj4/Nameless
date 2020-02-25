@@ -75,7 +75,11 @@ $admin_language = array(
 	'module_enabled' => 'Modulo abilitato.',
 	'module_disabled' => 'Modulo disabilitato.',
 	'site_name' => 'Nome sito',
+<<<<<<< HEAD
 	'language' => 'Linguaggio',
+=======
+	'language' => 'Lingua',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	'voice_server_not_writable' => 'core/voice_server.php non &egrave; scrivibile. Per favore controlla i permessi del file.',
 	'email' => 'Email',
 	'incoming_email' => 'Indirizzo email in entrata',
@@ -97,8 +101,13 @@ $admin_language = array(
 	'forum_in_maintenance' => 'Il Forum &egrave; in manutenzione',
 	'unable_to_update_settings' => 'Impossibile aggiornare le impostazioni. Per favore assicurati che non ci siano campi vuoti.',
 	'editing_google_analytics_module' => 'Modificando il modulo di Google Analytics',
+<<<<<<< HEAD
 	'tracking_code' => 'Codice di Tracking',
 	'tracking_code_help' => 'Insrisci il codice di tracking per Google Analytics qui, includendo i tag script che lo circondano.',
+=======
+	'tracking_code' => 'Codice di Tracciamento',
+	'tracking_code_help' => 'Insrisci il codice di tracciamento per Google Analytics qui, includendo i tag script che lo circondano.',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	'google_analytics_help' => 'Vedi <a href="https://support.google.com/analytics/answer/1008080?hl=en#GA" target="_blank">questa guida</a> per pi&ugrave; informazioni, seguendo gli step dal 1 al 3.',
 	'social_media_links' => 'Link Social Media',
 	'youtube_url' => 'Youtube URL',
@@ -164,7 +173,11 @@ $admin_language = array(
 	'page_deleted_successfully' => 'Pagina cancellata con successo',
 	'page_link_location' => 'Mostra il link della pagina su:',
 	'page_link_navbar' => 'Navbar',
+<<<<<<< HEAD
 	'page_link_more' => 'Navbar "More" dropdown',
+=======
+	'page_link_more' => 'Dropdown "Altro" della navbar',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	'page_link_footer' => 'Pi&egrave; di pagina',
 	'page_link_none' => 'Nessun link pagina',
 	'page_permissions' => 'Permessi pagina',
@@ -192,7 +205,11 @@ $admin_language = array(
 	'label_warning' => 'Avvertimento',
 	'label_danger' => 'Pericolo',
 	'new_forum' => 'Nuovo Forum',
+<<<<<<< HEAD
 	'forum_layout' => 'Forum Layout',
+=======
+	'forum_layout' => 'Layout Forum',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	'table_view' => 'Vista tavole',
 	'latest_discussions_view' => 'Vista ultime discussioni',
 	'create_forum' => 'Crea Forum',
@@ -319,7 +336,11 @@ $admin_language = array(
 	'mcassoc_instance' => 'Istanza mcassoc',
 	'mcassoc_instance_help' => 'Genera un codice istanza <a href="http://jsbin.com/jadofehoqu/1/" target="_blank">qui</a>',
 	'mcassoc_key_help' => 'Prendi la tua chiave mcassoc <a href="https://mcassoc.lukegb.com/" target="_blank">qui</a>',
+<<<<<<< HEAD
 	'enable_name_history' => 'Abilitare la storia username?',
+=======
+	'enable_name_history' => 'Abilitare la cronologia username?',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	
 	// Admin Themes, Templates and Addons
 	'themes' => 'Temi',
@@ -385,7 +406,11 @@ $navbar_language = array(
 	'home' => 'Home',
 	'play' => 'Play',
 	'forum' => 'Forum',
+<<<<<<< HEAD
 	'more' => 'Pi&ugrave;',
+=======
+	'more' => 'Altro',
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 	'staff_apps' => 'Richieste Staff',
 	'view_messages' => 'Vedi messaggi',
 	'view_alerts' => 'Vedi gli avvisi',

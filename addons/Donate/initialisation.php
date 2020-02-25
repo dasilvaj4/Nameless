@@ -9,8 +9,19 @@
 // Initialise the donate addon
 // We've already checked to see if it's enabled
 
+<<<<<<< HEAD
 // Require language
 require('addons/Donate/language.php');
+=======
+// Check language
+$c->setCache('languagecache');
+$language = $c->retrieve('language');
+
+if(file_exists('addons/Donate/' . $language . '.php'))
+	require('addons/Donate/' . $language . '.php');
+else
+	require('addons/Donate/language.php');
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 
 // Enabled, add links to navbar
 // Check cache for link location

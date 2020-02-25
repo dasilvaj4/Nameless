@@ -57,7 +57,11 @@ $page = 'forum'; // for navbar
 	    <h1><?php echo $admin_language['maintenance_mode']; ?></h1>
 		<h4><?php echo $admin_language['forum_in_maintenance']; ?></h4>
 		<div class="btn-group" role="group" aria-label="...">
+<<<<<<< HEAD
 		  <a href="#" class="btn btn-primary btn-lg" onclick="window.history.back()"><?php echo $general_language['back']; ?></a>
+=======
+		  <button class="btn btn-primary btn-lg" onclick="javascript:history.go(-1)"><?php echo $general_language['back']; ?></button>
+>>>>>>> 37925b97dfac5fe1053307fd1e84ee176b24878b
 		  <a href="/" class="btn btn-success btn-lg"><?php echo $navbar_language['home']; ?></a>
 	    </div>
 	  </div>
